@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Make Unity </title>
+    <style> 
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f4f4f4;
+    }
+    
+    header {
+        background: #333;
+        color: #fff;
+        padding: 10px 0;
+    }
+    
+    header h1 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    nav ul {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+    }
+    
+    nav ul li {
+        margin: 0 20px;
+    }
+    
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px;
+        font-size: 18px;
+    }
+    
+    nav ul li a:hover {
+        background: #555;
+        transition: background 0.3s;
+    }
+    
+    /* .img {
+        background-color: #444;
+        color: #fff;
+        text-align: center;
+        padding: 50px 0;
+    }
+    
+    .img img {
+        max-height: 300px;
+        object-fit: scale-down;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: top ;
+        background-blend-mode: 30%;
+        width:100%;
+        height:100%;
+    } */
+    .img {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px; /* Space between the images */
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+.img-container img {
+    width: 20%; /* Reduce the image size to 20% of the container */
+    height: auto; /* Maintain the aspect ratio */
+    object-fit: contain; /* Ensure the image fits inside its container */
+}
+
+
+    /* Vision and Mission Section */
+.vision-mission {
+    background-color: #343131;
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.vision-mission h2 {
+    font-size: 2.5em;
+    color: #EEDF7A;
+}
+
+.vision-mission p {
+    font-size: 1.2em;
+    color: #EEDF7A;
+    margin: 20px 0 40px;
+    line-height: 1.6;
+}
+
+.vision, .mission {
+    margin: 20px 0;
+}
+
+.vision-mission .vision h2, .vision-mission .mission h2 {
+    font-size: 2em;
+}
+
+/* Projects Section Styling */
+.projects {
+    background-color: #FCFAEE;
+    padding: 40px 0;
+    text-align: center;
+    color: #00246B;
+}
+
+.projects h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.projects p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background-color: #FCFAEE;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: #FCFAEE;
+}
+
+.project-card h3 {
+    font-size: 1.6em;
+    margin: 20px 0 10px;
+    padding: 0 15px;
+    color: #507687;
+}
+
+.project-card p {
+    font-size: 1em;
+    padding: 0 15px 20px;
+    color: #507687;
+}
+
+/* Achievements Section on Home Page */
+.home-achievements {
+    background-color: #f4f4f4;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.home-achievements h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.home-achievements p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.achievements-preview {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.achievement-item {
+    background: #fff;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    text-align: center;
+}
+
+.achievement-item h3 {
+    font-size: 5em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.achievement-item p {
+    font-size: 5em;
+    color: #1F7779;
+    text-align: center;
+}
+
+    
+    .projects, .achievements {
+        padding: 20px;
+        background-color: #fff;
+        margin: 20px 0;
+    }
+    
+    footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+    }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1> Make Unity </h1>
+            <nav>
+                <ul>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="donation.html">Donation</a></li>
+                    <li><a href="achievements.html">Achievements</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Image Section -->
+        <section class="img">
+    <div class="img-container">
+        <img src="3.jpg" alt="Unity Image 1">
+        <img src="2.jpg" alt="Unity Image 2">
+        <img src="1.jpg" alt="Unity Image 3">
+    </div>
+    <h2> Make Unity </h2>
+    <h3> To Make Better Future For Poor People. </h3>
+</section>
+
+
+        <!-- Our Projects Section -->
+        <section class="projects">
+            <h2> Our Projects </h2>
+            <p>To Work For Poor People ...</p>
+            <p>To Rescue Street Pets ...</p>
+            <p>To Collect Funds From People To Donate Food ...</p>
+        </section>
+         <!-- Vision and Mission Section -->
+    <section class="vision-mission">
+        <div class="container">
+            <div class="vision">
+                <h2>Our Vision</h2>
+                <p>To be a leading platform for fostering innovation, collaboration, and knowledge-sharing, helping build a brighter and more sustainable future for all.</p>
+            </div>
+
+            <div class="mission">
+                <h2>Our Mission</h2>
+                <p>Our mission is to organize impactful symposiums and conferences that connect diverse minds, inspire innovative solutions, and empower communities to address global challenges.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects">
+        <div class="container">
+            <h2>Our Projects</h2>
+            <p>Take a look at the impactful projects and research initiatives we're working on.</p>
+            
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <img src="images/project1.jpg" alt="Project 1">
+                    <h3>Project Title 1</h3>
+                    <p>Short description of the project goes here. Focused on innovation and community development.</p>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <img src="images/project2.jpg" alt="Project 2">
+                    <h3>Project Title 2</h3>
+                    <p>Another impactful project that aims to address real-world challenges with cutting-edge solutions.</p>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <img src="images/project3.jpg" alt="Project 3">
+                    <h3>Project Title 3</h3>
+                    <p>This project involves extensive collaboration with international experts to solve global issues.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Our Achievements Section -->
+        <section class="achievements">
+            <h2>Our Achievements</h2>
+            <p>Details about achievements...</p>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>Contact: contact@example.com</p>
+            <p>Address: 123 Symposium St., City, Country</p>
+        </div>
+    </footer>
+
+    
+
+<script>
+ // Smooth scrolling for navigation links (for internal links only)
+document.querySelectorAll('nav a').forEach(anchor => {
+    // Check if it's an anchor link (e.g., href="#section-id") and not an external page
+    if (anchor.getAttribute('href').startsWith('#')) {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();  // Prevent default only for internal page links
+            const targetId = this.getAttribute('href').slice(1);  // Get the target section ID (without '#')
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80,  // Adjust offset for header
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
+});
+
+// Highlight navigation link based on scroll position (this part is fine and can stay as is)
+window.addEventListener('scroll', function() {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    let currentIndex = 0;
+    sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 100 && rect.bottom >= 100) {
+            currentIndex = index;
+        }
+    });
+
+    navLinks.forEach((link, index) => {
+        if (index === currentIndex) {
+            link.style.backgroundColor = '#555';
+        } else {
+            link.style.backgroundColor = '';
+        }
+    });
+});
+
+</script>
+</body>
+</html>
